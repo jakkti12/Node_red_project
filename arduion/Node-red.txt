@@ -1,0 +1,838 @@
+[
+    {
+        "id": "bb64f5cc3d51c784",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "61fe2e0412d30c58",
+        "type": "inject",
+        "z": "bb64f5cc3d51c784",
+        "name": "START",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "master/kit",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "efb2d241dbf3f352",
+                "3afef097a82c4b56",
+                "bfba2a154e994e5e"
+            ]
+        ]
+    },
+    {
+        "id": "efb2d241dbf3f352",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "89ce2a5ad405947d",
+        "type": "mqtt in",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "sensor1/tempkit",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "687068d453a522ba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "2e613e6afe44334d",
+                "d11b7e31cc83e08a"
+            ]
+        ]
+    },
+    {
+        "id": "3afef097a82c4b56",
+        "type": "mqtt out",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "master/kit",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "687068d453a522ba",
+        "x": 480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d11b7e31cc83e08a",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "mqtt_in",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2a8b5378d6ad3de6",
+        "type": "inject",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "response",
+        "payload": "yes",
+        "payloadType": "str",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "8d5a6ee993563b88"
+            ]
+        ]
+    },
+    {
+        "id": "8d5a6ee993563b88",
+        "type": "mqtt out",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "responsekit",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "687068d453a522ba",
+        "x": 510,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "387b17d4fa1f3f7a",
+        "type": "mqtt in",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "sensor2/humikit",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "687068d453a522ba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 400,
+        "wires": [
+            [
+                "e8154d94a07c852c"
+            ]
+        ]
+    },
+    {
+        "id": "6faf926c508c75d4",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "mqtt_in",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3b86b34681455697",
+        "type": "mqtt in",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "jakkti/sw01",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d2d0be61ef3aeddc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 520,
+        "wires": [
+            [
+                "64723ef92b5cbf3c"
+            ]
+        ]
+    },
+    {
+        "id": "64723ef92b5cbf3c",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "mqtt_in",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ee439d411b2f8643",
+        "type": "ui_artlessgauge",
+        "z": "bb64f5cc3d51c784",
+        "group": "d94aa88dbecb28dd",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "",
+        "label": "อุณหภูมิ",
+        "unit": "",
+        "layout": "linear",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#ff9900",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#ff9900",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 480,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a05c275bbde73ba3",
+        "type": "ui_artlessgauge",
+        "z": "bb64f5cc3d51c784",
+        "group": "d94aa88dbecb28dd",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "",
+        "label": "ความชื่น",
+        "unit": "",
+        "layout": "linear",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#ff9900",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#ff9900",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 500,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "2e613e6afe44334d",
+        "type": "change",
+        "z": "bb64f5cc3d51c784",
+        "name": "temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 300,
+        "wires": [
+            [
+                "ee439d411b2f8643",
+                "66abdc960fd0e0f5"
+            ]
+        ]
+    },
+    {
+        "id": "e8154d94a07c852c",
+        "type": "change",
+        "z": "bb64f5cc3d51c784",
+        "name": "humi",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 420,
+        "wires": [
+            [
+                "a05c275bbde73ba3",
+                "6faf926c508c75d4",
+                "bbe229cd176a68ac"
+            ]
+        ]
+    },
+    {
+        "id": "66abdc960fd0e0f5",
+        "type": "ui_gauge",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "group": "d94aa88dbecb28dd",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "อุณหภูมิ",
+        "label": "units",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "cc83b4fa8553f11b",
+        "type": "inject",
+        "z": "bb64f5cc3d51c784",
+        "name": "STOP",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "master/kit",
+        "payload": "0",
+        "payloadType": "str",
+        "x": 190,
+        "y": 20,
+        "wires": [
+            [
+                "ee33cb57c1cded02",
+                "0a122ca5cb8a78ad",
+                "bfba2a154e994e5e"
+            ]
+        ]
+    },
+    {
+        "id": "ee33cb57c1cded02",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "0a122ca5cb8a78ad",
+        "type": "mqtt out",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "topic": "master/kit",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "687068d453a522ba",
+        "x": 480,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "bfba2a154e994e5e",
+        "type": "ui_led",
+        "z": "bb64f5cc3d51c784",
+        "order": 6,
+        "group": "d94aa88dbecb28dd",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 370,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "817ac9897f39ecb8",
+        "type": "ui_button",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "group": "d94aa88dbecb28dd",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "master/kit",
+        "topicType": "msg",
+        "x": 190,
+        "y": 100,
+        "wires": [
+            [
+                "bfba2a154e994e5e",
+                "3afef097a82c4b56"
+            ]
+        ]
+    },
+    {
+        "id": "1112d140c09be49b",
+        "type": "ui_button",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "group": "d94aa88dbecb28dd",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "master/kit",
+        "topicType": "msg",
+        "x": 190,
+        "y": 60,
+        "wires": [
+            [
+                "bfba2a154e994e5e",
+                "0a122ca5cb8a78ad"
+            ]
+        ]
+    },
+    {
+        "id": "bbe229cd176a68ac",
+        "type": "ui_gauge",
+        "z": "bb64f5cc3d51c784",
+        "name": "",
+        "group": "d94aa88dbecb28dd",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "ความชื่น",
+        "label": "units",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "89b35ef30d2a8f9b",
+        "type": "ui_led",
+        "z": "bb64f5cc3d51c784",
+        "order": 1,
+        "group": "d94aa88dbecb28dd",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffffff",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#ff0000",
+                "value": "red",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Red",
+        "x": 830,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "503230b8831db5be",
+        "type": "ui_led",
+        "z": "bb64f5cc3d51c784",
+        "order": 1,
+        "group": "d94aa88dbecb28dd",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffffff",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#ffff00",
+                "value": "yellow",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Yellow",
+        "x": 830,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "15d3971ea84a7ea1",
+        "type": "ui_led",
+        "z": "bb64f5cc3d51c784",
+        "order": 1,
+        "group": "d94aa88dbecb28dd",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ffffff",
+                "value": "0",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "green",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "Green",
+        "x": 830,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c4be50d0a154d282",
+        "type": "mqtt in",
+        "z": "bb64f5cc3d51c784",
+        "name": "led",
+        "topic": "sensor1/tempkit/led",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "687068d453a522ba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 630,
+        "y": 320,
+        "wires": [
+            [
+                "89b35ef30d2a8f9b",
+                "503230b8831db5be",
+                "15d3971ea84a7ea1",
+                "b110175cf3ed8411"
+            ]
+        ]
+    },
+    {
+        "id": "b110175cf3ed8411",
+        "type": "debug",
+        "z": "bb64f5cc3d51c784",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d238c57be07fb3cb",
+        "type": "inject",
+        "z": "bb64f5cc3d51c784",
+        "name": "START",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "master/kit",
+        "payload": "1",
+        "payloadType": "str",
+        "x": 650,
+        "y": 400,
+        "wires": [
+            [
+                "89b35ef30d2a8f9b"
+            ]
+        ]
+    },
+    {
+        "id": "687068d453a522ba",
+        "type": "mqtt-broker",
+        "name": "mqtt_control",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d2d0be61ef3aeddc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d94aa88dbecb28dd",
+        "type": "ui_group",
+        "name": "แผงควบคุมไฟเปิดปิด",
+        "tab": "42e6b03e23cc63cc",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "42e6b03e23cc63cc",
+        "type": "ui_tab",
+        "name": "หน้าหลัก",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
